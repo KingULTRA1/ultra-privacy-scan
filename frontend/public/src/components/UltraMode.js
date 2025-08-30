@@ -1,0 +1,57 @@
+const ULTRA_FILTERS = [
+  // Top 50+ trackers (analytics, social, marketing, ads)
+  'www.google-analytics.com',
+  'connect.facebook.net',
+  'doubleclick.net',
+  'api.mixpanel.com',
+  'script.hotjar.com',
+  'cdn.segment.com',
+  'js.hs-scripts.com',
+  'snap.licdn.com',
+  'analytics.twitter.com',
+  's.pinimg.com',
+  'ads.yahoo.com',
+  'ads.twitter.com',
+  'ads.facebook.com',
+  'pixel.adroll.com',
+  'ads.linkedin.com',
+  'cdn.amplitude.com',
+  'track.customer.io',
+  'www.googletagmanager.com',
+  'stats.wp.com',
+  'cdn.optimizely.com',
+  'tagmanager.google.com',
+  'bat.bing.com',
+  'ads.mopub.com',
+  'appboy.eu',
+  'api.intercom.io',
+  'stats.g.doubleclick.net',
+  'metrics.tiktok.com',
+  'static.hotjar.com',
+  'www.redditstatic.com',
+  'www.tiktok.com',
+  'cdn.branch.io',
+  'cdn.woopra.com',
+  'pixel.quantserve.com',
+  'tracking.myshopify.com',
+  'cdn.jsdelivr.net',
+  'www.googletagservices.com',
+  'googleads.g.doubleclick.net',
+  'connect.facebook.net/en_US/fbevents.js',
+  'cdn.mxpnl.com',
+  'api.segment.io',
+  'stats.g.doubleclick.net/dc.js',
+  'www.yandex.ru',
+  'analytics.kissmetrics.com',
+  'www.criteo.com',
+  'adservice.google.com',
+  'tracking.optimizely.com',
+  'api.heapanalytics.com',
+  'track.adform.net'
+];
+
+function ultraScan(log) {
+  return log.filter(entry =>
+    ULTRA_FILTERS.some(tracker => entry.url.includes(tracker))
+  );
+}
